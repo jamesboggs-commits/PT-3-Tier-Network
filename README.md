@@ -52,15 +52,12 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 
 ## 🛠️ Configuration & Implementation Highlights
 
-### 1. Dynamic Routing (OSPF)
-OSPF is enabled across all Layer 3 switches and the Edge Router to allow automatic route convergence.
+### 1. Feature
+description
 ```ciscolike
-router ospf 1
- router-id 1.1.1.1
- log-adjacency-changes
- passive-interface default
- no passive-interface GigabitEthernet0/0/1
- network 10.10.0.0 0.0.255.255 area 0
+command
+command
+command
 ```
 ### 3. Security Implementation
 * **Port Security:** Enabled on access ports across floor switches to restrict MAC address learning and prevent unauthorized device attachments.
@@ -68,7 +65,7 @@ router ospf 1
 * **Guest Isolation:** Access Control Lists (ACLs) are deployed at the edge to ensure the **Guest Wi-Fi (VLAN 60)** has internet access only, completely blocking lateral movement into county department subnets and the Server Farm.
 
 ### 4. Link Aggregation (EtherChannel)
-Port channels are configured between the floor Layer 3 switches and the Core switch using LACP (IEEE 802.3ad) to provide redundancy and aggregate bandwidth.
+Port channels are configured between the core switches using LACP to provide redundancy and aggregate bandwidth.
 ```ciscolike
 interface range GigabitEthernet0/1 - 2
  channel-group 1 mode active
@@ -77,3 +74,10 @@ interface Port-channel 1
  switchport mode trunk
  description Core_Uplink_Aggregation
 ```
+
+## Final thoughts & Considerations
+
+## 1. Access switch redundancy
+When looking at the topology, it's easy to see that an entire floor can go down if an access switch goes down. I originally wanted to implement Cisco StackWise to combat this. The floor would be physically split into two switches so that half the floor would still be up if one of them failed, but logically they would act as one switch. 
+StackWise would also fix the problem of simply not having enough switch ports for every wall mount on floor 1. 
+Unfortunately, Cisco Packet Tracer does not support StackWise.
