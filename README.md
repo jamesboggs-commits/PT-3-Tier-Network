@@ -18,9 +18,9 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 ![Logical Topology](docs/Logical_Topology.png)
 
 ### Device Roles
-* **`Edge Routers / Firewalls`:** Handles WAN handoff to both ISPs, NAT, and outer firewall boundary.
+* **`Edge-Router/2, Edge-Firewall/2`:** Handles WAN handoff to both ISPs, NAT, and outer firewall boundary.
 * **`L3Sw-Core`, `L3Sw-Core2`:** Act as the backbone, facilitating North-South traffic and server connections.
-* **`Sw-1` (Basement), `Sw-2` (Floor 1), `Sw-3` (Floor 2), `Sw-4` (Floor 3):** Access switches providing connectivity for workstations, IoT, and WAP.
+* **`Sw-Basement`, `Sw-Floor1`, `Sw-Floor2`, `Sw-Floor3`:** Access switches providing connectivity for workstations, IoT, and WAP.
 * **`CyberObserver`:**
 * **`NOC workstation`:**
 
