@@ -20,7 +20,7 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 ### Device Roles
 * **`Edge-Router/2, Edge-Firewall/2`:** Handles WAN handoff to both ISPs, NAT, and outer firewall boundary.
 * **`L3Sw-Core`, `L3Sw-Core2`:** Act as the backbone, facilitating North-South traffic and server connections.
-* **`Sw-Basement`, `Sw-Floor1`, `Sw-Floor2`, `Sw-Floor3`:** Access switches providing connectivity for workstations, IoT, and WAP.
+* **`Sw-Basement/2`, `Sw/2-Floor1`, `Sw/2-Floor2`, `Sw/2-Floor3`:** Access switches providing connectivity for workstations, IoT, and WAP.
 * **`CyberObserver`:**
 * **`NOC workstation`:**
 
@@ -78,6 +78,4 @@ interface Port-channel 1
 ## 💭 Final thoughts & Considerations
 
 ### 1. Access switch redundancy
-When looking at the topology, it's easy to see that an entire floor can go down if an access switch goes down. I originally wanted to implement Cisco StackWise to combat this. The floor would be physically split into two switches so that half the floor would still be up if one of them failed, but logically they would act as one switch. 
-StackWise would also fix the problem of simply not having enough switch ports for every wall mount on floor 1. 
-Unfortunately, Cisco Packet Tracer does not support StackWise.
+When looking at the topology, using a single access switch can take out an entire floor, and can also run short on ports for every wall mount. I originally wanted to use Cisco StackWise so two switches would act as one logical switch while splitting endpoints across both physical units to limit the failure domain. Because Packet Tracer doesn't support StackWise, I used separate access switches with redundant uplinks/STP instead.
