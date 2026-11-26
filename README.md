@@ -18,10 +18,11 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 ![Logical Topology](docs/Logical_Topology.png)
 
 ### Device Roles
-* **`Edge Router / Firewall`:** Handles WAN handoff to ISP, NAT, and outer firewall boundary.
-* **`L3Sw-Core`:** Acts as the backbone, facilitating inter-floor traffic and server connections.
-* **`L3Sw-2` (Floor 1), `L3Sw-3` (Floor 2), `L3Sw-4` (Floor 3):** Multilayer switches providing local inter-VLAN routing for departmental offices.
-* **`L2Sw-1` (Basement):** Layer 2 switch servicing the Office of Emergency Management
+* **`Edge Routers / Firewalls`:** Handles WAN handoff to both ISPs, NAT, and outer firewall boundary.
+* **`L3Sw-Core`, `L3Sw-Core2`:** Act as the backbone, facilitating North-South traffic and server connections.
+* **`Sw-1` (Basement), `Sw-2` (Floor 1), `Sw-3` (Floor 2), `Sw-4` (Floor 3):** Access switches providing connectivity for workstations, IoT, and WAP.
+* **`CyberObserver`:**
+* **`NOC workstation`:**
 
 ---
 
@@ -44,6 +45,7 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 | **43** | Prosecuting Attorney  | 10.10.43.0 | 255.255.255.224 | /27 | 30 | 10.10.43.1 - 10.10.43.30 | 10.10.43.1 |
 | **50** | Servers               | 10.10.50.0 | 255.255.255.224 | /27 | 30 | 10.10.50.1 - 10.10.50.30 | 10.10.50.1 |
 | **60** | Guest Wi-Fi           | 192.168.0.0 | 255.255.254.0  | /23 | 510 | 192.168.0.1 - 192.168.1.254 | 192.168.0.1 |
+| **70** | IoT                   | 10.10.70.0 | 255.255.255.0   | /24 | 255 | 10.10.70.1 - 10.10.70.254 | 10.10.70.1 |
 | **97** | Printers              | 10.10.97.0 | 255.255.255.224 | /27 | 30 | 10.10.97.1 - 10.10.97.30 | 10.10.97.1 |
 | **98** | Voice VLAN (VoIP)     | 10.10.98.0 | 255.255.255.0   | /24 | 254 | 10.10.98.1 - 10.10.98.254 | 10.10.98.1 |
 | **99** | Management VLAN       | 10.10.99.0 | 255.255.255.224 | /27 | 30 | 10.10.99.1 - 10.10.99.30 | 10.10.99.1 |
