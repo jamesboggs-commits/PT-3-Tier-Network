@@ -20,7 +20,7 @@ It demonstrates hierarchical network architecture, network segmentation, dynamic
 ### Device Roles
 * **`Edge-Router/2, Edge-Firewall/2`:** Handles WAN handoff to both ISPs, NAT, and outer firewall boundary.
 * **`L3Sw-Core`, `L3Sw-Core2`:** Act as the backbone, facilitating North-South traffic and server connections.
-* **`Sw-Basement/2`, `Sw/2-Floor1`, `Sw/2-Floor2`, `Sw/2-Floor3`:** Access switches providing connectivity for workstations, IoT, and WAP.
+* **`Sw/2-Basement`, `Sw/2-Floor1`, `Sw/2-Floor2`, `Sw/2-Floor3`:** Access switches providing connectivity for workstations, IoT, and WAP.
 * **`CyberObserver`:**
 * **`NOC workstation`:**
 
