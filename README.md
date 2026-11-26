@@ -75,7 +75,7 @@ interface Port-channel 1
  description Core_Uplink_Aggregation
 ```
 
-## Final thoughts & Considerations
+### Final thoughts & Considerations
 
 ## 1. Access switch redundancy
 When looking at the topology, it's easy to see that an entire floor can go down if an access switch goes down. I originally wanted to implement Cisco StackWise to combat this. The floor would be physically split into two switches so that half the floor would still be up if one of them failed, but logically they would act as one switch. 
