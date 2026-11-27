@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 This project simulates a secure, three-tier enterprise network for a multi-floor county courthouse using Cisco Packet Tracer. \
-It demonstrates hierarchical network architecture, network segmentation, redundancy, AAA, QoS, EtherChannel, NAT, DHCP, DNS, and network device hardening.
+It demonstrates hierarchical network architecture, network segmentation, redundancy, RADIUS, QoS, EtherChannel, NAT, DHCP, DNS, and network device hardening.
 
 
 ### Key Features & Technologies
